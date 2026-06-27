@@ -80,7 +80,8 @@ verve --help                   # all options
 - **WPM** is `(correct characters / 5) / minutes`, using the standard five-character
   word — the same definition sites like Monkeytype use. Only correct characters count.
 - **Accuracy** is correct characters over characters typed.
-- The **best score** is kept for the current session and resets when you close `verve`.
+- The **best score** is saved per word count and persists across sessions. Custom-text
+  runs (`--text`) are tracked only for the current session.
 
 ## License
 

@@ -35,13 +35,14 @@ impl App {
     pub fn new(source: Source) -> Self {
         let text = source.text();
         let word_count = text.split_whitespace().count();
+        let best_wpm = crate::score::load_best(&source);
         Self {
             target: text.chars().collect(),
             typed: Vec::new(),
             word_count,
             confetti: Vec::new(),
             source,
-            best_wpm: 0.0,
+            best_wpm,
             record: false,
             started_at: None,
             finished_at: None,
@@ -74,6 +75,7 @@ impl App {
             self.record = true;
             self.confetti = confetti::burst(80);
             self.celebration_at = Some(Instant::now());
+            crate::score::save_best(&self.source, wpm);
         }
     }
 

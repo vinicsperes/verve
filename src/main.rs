@@ -1,5 +1,6 @@
 mod app;
 mod confetti;
+mod score;
 mod ui;
 mod words;
 
