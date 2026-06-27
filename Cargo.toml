@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 description = "A minimalist typing speed test for the terminal"
 license = "MIT"
-repository = ""
+repository = "https://github.com/vinicsperes/verve"
 readme = "README.md"
 
 [dependencies]
