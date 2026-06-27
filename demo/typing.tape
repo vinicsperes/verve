@@ -25,6 +25,8 @@ Sleep 500ms
 Backspace 3
 Type@75ms "mps "
 Type@75ms "over the lazy dog"
-Sleep 1500ms
+Sleep 1800ms
+
+# Quit off-camera so the GIF ends inside verve, not back at the shell.
+Hide
 Escape
-Sleep 600ms

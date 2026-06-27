@@ -20,5 +20,7 @@ Show
 Sleep 700ms
 Type@60ms "speed comes from calm and steady hands"
 Sleep 4500ms
+
+# Quit off-camera so the GIF ends on the results screen, not back at the shell.
+Hide
 Escape
-Sleep 500ms
