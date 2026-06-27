@@ -3,6 +3,7 @@
 <p align="center">A minimalist typing speed test that lives in your terminal.</p>
 
 <p align="center">
+  <img src="https://github.com/vinicsperes/verve/actions/workflows/ci.yml/badge.svg" alt="ci">
   <img src="https://img.shields.io/badge/license-MIT-d77757" alt="license">
   <img src="https://img.shields.io/badge/built%20with-Rust-d77757?logo=rust&logoColor=white" alt="built with Rust">
   <img src="https://img.shields.io/badge/platform-linux%20%C2%B7%20macOS%20%C2%B7%20windows-d77757" alt="platforms">

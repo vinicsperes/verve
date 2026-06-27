@@ -96,7 +96,11 @@ fn title(app: &App) -> Paragraph<'static> {
             Style::default().fg(TEXT).add_modifier(Modifier::BOLD),
         ),
         Span::styled(
-            format!("   {} / {}", typed_words.min(app.word_count), app.word_count),
+            format!(
+                "   {} / {}",
+                typed_words.min(app.word_count),
+                app.word_count
+            ),
             Style::default().fg(FAINT),
         ),
     ]))
@@ -165,7 +169,9 @@ fn typing_layout(app: &App, inner_width: u16) -> (Vec<Line<'static>>, (u16, u16)
             if app.typed[idx] == target_ch {
                 Style::default().fg(TEXT)
             } else {
-                Style::default().fg(ERROR).add_modifier(Modifier::UNDERLINED)
+                Style::default()
+                    .fg(ERROR)
+                    .add_modifier(Modifier::UNDERLINED)
             }
         } else {
             Style::default().fg(DIM)
@@ -190,10 +196,7 @@ fn results(app: &App) -> Paragraph<'static> {
         ]),
         Line::from(""),
         Line::from(vec![
-            Span::styled(
-                format!("{:.0}%", app.accuracy()),
-                Style::default().fg(TEXT),
-            ),
+            Span::styled(format!("{:.0}%", app.accuracy()), Style::default().fg(TEXT)),
             Span::styled("  accuracy", Style::default().fg(DIM)),
         ]),
         Line::from(Span::styled(
@@ -222,17 +225,16 @@ fn status(app: &App) -> Paragraph<'static> {
     let sep = Span::styled("   \u{2022}   ", Style::default().fg(FAINT));
 
     let line = if app.is_finished() {
-        Line::from(vec![
-            hint("tab", "restart"),
-            sep,
-            hint("esc", "quit"),
-        ])
+        Line::from(vec![hint("tab", "restart"), sep, hint("esc", "quit")])
     } else if app.is_started() {
         Line::from(vec![
             Span::styled("\u{25cf} ", Style::default().fg(ACCENT)),
             Span::styled(format!("{:.0} wpm", app.wpm()), Style::default().fg(TEXT)),
             sep,
-            Span::styled(format!("{:.0}s", app.elapsed_secs()), Style::default().fg(DIM)),
+            Span::styled(
+                format!("{:.0}s", app.elapsed_secs()),
+                Style::default().fg(DIM),
+            ),
         ])
     } else {
         Line::from(vec![
@@ -248,10 +250,7 @@ fn status(app: &App) -> Paragraph<'static> {
 }
 
 fn hint(key: &'static str, label: &'static str) -> Span<'static> {
-    Span::styled(
-        format!("{key} {label}"),
-        Style::default().fg(FAINT),
-    )
+    Span::styled(format!("{key} {label}"), Style::default().fg(FAINT))
 }
 
 fn centered(area: Rect, width: u16, height: u16) -> Rect {

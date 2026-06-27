@@ -41,6 +41,10 @@ fn parse_args() -> Option<Source> {
                 print_help();
                 return None;
             }
+            "-v" | "--version" => {
+                println!("verve {}", env!("CARGO_PKG_VERSION"));
+                return None;
+            }
             "-t" | "--text" => {
                 if let Some(text) = args.next() {
                     return Some(Source::Fixed(text));
@@ -66,6 +70,7 @@ fn print_help() {
     println!("Options:");
     println!("  -w, --words <n>     number of random words (default: {WORD_COUNT})");
     println!("  -t, --text <text>   type a fixed text instead of random words");
+    println!("  -v, --version       show version");
     println!("  -h, --help          show this help");
     println!();
     println!("Controls:");

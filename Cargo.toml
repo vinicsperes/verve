@@ -6,6 +6,8 @@ description = "A minimalist typing speed test for the terminal"
 license = "MIT"
 repository = "https://github.com/vinicsperes/verve"
 readme = "README.md"
+keywords = ["typing", "tui", "wpm", "terminal", "cli"]
+categories = ["command-line-utilities"]
 
 [dependencies]
 ratatui = "0.29"
